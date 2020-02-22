@@ -1,6 +1,8 @@
 html{
     background-color: rgb(236, 236, 236);
-
+    font-family: 'Barlow', sans-serif;
+    /* define that you use the font side like the brower given 16px */
+    font-size: 100%;
 }
 
 body{
@@ -11,10 +13,74 @@ a{
     text-decoration: none;
     color:black
 }
+
+/* anker the link */
+a:active{
+    color: #fa923f;
+}
+
+/* if we hover the image we turn the cursour into pointer CALLED SUDO CLASS*/
+img:hover {
+    cursor: pointer;
+}
+
+/* modal */
+.backdrop {
+    display: none; 
+    position: fixed;
+    background: rgba(0,0,0, 0.5);
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    background: white;
+    padding: 10px;
+    width: 260px;
+    top: 100px;
+    left: calc(50% - 140px);
+    z-index: 1;
+}
+
+.modal h1{
+    margin:0;
+}
+
+.modal button {
+    background-color: #fa923f;
+    color: white;
+    border: 1px solid #521751;
+    font:inherit;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.modal button:hover,
+.modal button:active {
+    background: #521751;
+}
+
+.modal button:focus {
+    outline:none;
+}
+
+@media (min-width: 400px) {
+    .modal{
+        width: 360px;
+        left: calc(50% - 190px);
+    }
+}
 /*header*/
 
 .fixed-bar {
     height: 70px;
+    /* makes the Mike's world double then change the
+    page title make it the same*/
+    /* font-size: 2em; */
 }
 
 .page-title{
@@ -27,41 +93,44 @@ a{
     padding: 10px 0;
     margin: 0;
     text-align: center;
+    /* make it support another browser as well */
+    font-size: 32px;
+    /* we define the font nothing change (rem: r is root)*/
+    font-size: 2rem;
 }
 
 /* nav */
 .navigation{
+    /* make it center */
     text-align: center;
     padding: 0;
 }
 
-.navigation li, .navigation a { 
+.navigation li { 
     display: inline-block;
-    width: 70px;
+    width: 20%;
     background-color: rgb(177, 177, 174);
+    font-size: 16px;
+    font-size: 0.9rem;
 }
 
 /*main*/
 .trip-text {
-    background-color: #fa923f;
-    padding: 0px;
-    display: flex ;
+    display: none;
 }
 
-.trip-text p{
-    background-color: #521751;
-    color: white;
-    margin:0;
-    display: center ;
-    width: 50%;
-}
 
 .trip-images {
     display: flex;
+    /* make the picture go under when it reaches
+    min-width 200px */
+    flex-wrap: wrap;
 }
 
 .trip-images img {
-    width: 50%;
+    width: 100%;
+    /* min and Max give more responsive to web design */
+    /* min-width: 200px; cause chang it to mobile */
     height: 100%;
 }
 
@@ -72,6 +141,8 @@ a{
     color: white;
     text-align: center;
     margin: 0;
+    font-size: 16px;
+    font-size: 1rem;
 }
 
 /*footer*/
@@ -87,6 +158,7 @@ a{
     border: 1px solid black; 
     background-color: white;
     margin: 10px;
+    font-size: 1rem;
 }
 
 .review-clients img {
@@ -98,4 +170,38 @@ a{
 .review-clients p {
     width: 350px;
     text-align: center;
+    font-size: 16px;
+    font-size: 1rem,
+}
+
+/* make the home and contact (bigger) font size 1.2rem
+ when the min-width is 400px  */
+@media (min-width: 400px){
+    .navigation li { 
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 700px){
+    .trip-images img {
+        width: 50%;
+    }
+    
+    .trip-text {
+        background-color: #fa923f;
+        padding: 0px;
+        display: flex ;
+        font-size: 16px;
+        font-size: 1rem;
+    }
+
+    .trip-text p {
+        background-color: #521751;
+        color: white;
+        text-align: center;
+        margin:0;
+        width:50%;
+        font-size: 16px;
+        font-size: 1rem;
+    }
 }
